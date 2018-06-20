@@ -17,5 +17,4 @@ module "simple-app" {
   service_version     = "1.0.0"
   instance_type       = "m4.large"
   vpc_id              = "${data.terraform_remote_state.network.vpc_id}"
-  region              = "${data.terraform_remote_state.network.region}"
 }
