@@ -6,6 +6,10 @@ data "terraform_remote_state" "network" {
   }
 }
 
+provider "aws" {
+  region = "${data.terraform_remote_state.network.region}"
+}
+
 module "simple-app" {
   source              = "app.terraform.io/Darnold-Hashicorp/private-service/aws"
   version             = "1.0.5"
