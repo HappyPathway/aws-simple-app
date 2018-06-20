@@ -8,7 +8,7 @@ data "terraform_remote_state" "network" {
 
 module "simple-app" {
   source              = "app.terraform.io/Darnold-Hashicorp/private-service/aws"
-  version             = "1.0.3"
+  version             = "1.0.4"
   env                 = "${var.env}"
   key_name            = "${data.terraform_remote_state.network.key_name}"
   private_subnet_id   = "${data.terraform_remote_state.network.private_subnet}"
