@@ -19,6 +19,7 @@ module "simple-app" {
   service_healthcheck = "add/1/1"
   service_name        = "simple-app"
   service_version     = "1.0.1"
+  service_port        = 8000
   instance_type       = "m4.large"
   vpc_id              = "${data.terraform_remote_state.network.vpc_id}"
 }
