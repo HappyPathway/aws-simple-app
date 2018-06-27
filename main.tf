@@ -16,10 +16,10 @@ module "simple-app" {
   env                 = "${var.env}"
   key_name            = "${data.terraform_remote_state.network.key_name}"
   private_subnet_id   = "${data.terraform_remote_state.network.private_subnet}"
-  service_healthcheck = "add/1/1"
-  service_name        = "simple-app"
-  service_version     = "1.0.1"
-  service_port        = 8000
-  instance_type       = "m4.large"
+  service_healthcheck = "${var.service_healthcheck}"
+  service_name        = "${var.service_name}"
+  service_version     = "${var.service_version}"
+  service_port        = "${var.service_port}"
+  instance_type       = "${var.instance_type}"
   vpc_id              = "${data.terraform_remote_state.network.vpc_id}"
 }
