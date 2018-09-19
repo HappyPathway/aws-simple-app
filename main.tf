@@ -11,7 +11,7 @@ provider "aws" {
 }
 
 module "simple-app" {
-  source              = "app.terraform.io/Darnold-Hashicorp/private-service/aws"
+  source              = "github.com/HappyPathway/terraform-aws-private-service"
   version             = "1.1.10"
   env                 = "${var.env}"
   key_name            = "${data.terraform_remote_state.network.key_name}"
